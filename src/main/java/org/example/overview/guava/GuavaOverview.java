@@ -34,9 +34,20 @@ public class GuavaOverview {
         ImmutableSet<Integer> integerImmutableSet = ImmutableSet.of(1, 2, 3, 4, 5, 6);
         System.out.println(integerImmutableSet);
 
+        ImmutableSet<Integer> immutableSet = ImmutableSet.of(1, 2, 3);
+        System.out.println(immutableSet);
+
+        try {
+            immutableSet.add(1);  // Hier gibt die Programme UnsupportedOperationException, weil ImmutableSet ist unveränderbar.
+        } catch (UnsupportedOperationException e) {
+            System.out.println("Cannot modify an ImmutableSet!");
+            System.out.println();
+        }
+
+
         /*
         Es gibt viele verschiedene Immutable Classes und Schnittstellen, wie ImmutableSortedSet oder
-        ImmutableTable, um unverändernbar Elementen zu erzeugen. Man kann benötigen ,wenn es Daten gibt
+        ImmutableTable, um unveränderbar Elementen zu erzeugen. Man kann benötigen ,wenn es Daten gibt
         die nicht verändern
          */
 
@@ -44,7 +55,7 @@ public class GuavaOverview {
 
     public static void multiMapView(){
          /*
-        Man benutzt MultiMap interface um die Funktionalität von JDK-Map zu vergrößern.
+        Man benutzt MultiMap interface, um die Funktionalität von JDK-Map zu vergrößern.
 
          */
 
@@ -58,7 +69,20 @@ public class GuavaOverview {
 
         System.out.println("Fruits: " + multimap.get("fruit"));
         System.out.println("All entries: " + multimap.entries());
+
+        Multimap<String, String> listMultimap = ArrayListMultimap.create();
+        listMultimap.put("key", "value1");
+        listMultimap.put("key", "value1"); // Duplicates allowed
+        System.out.println("ArrayListMultimap: " + listMultimap.get("key"));
+
+        SetMultimap<String, String> setMultimap = HashMultimap.create();
+        setMultimap.put("key", "value1");
+        setMultimap.put("key", "value1"); // Duplicates not allowed
+        System.out.println("HashMultimap: " + setMultimap.get("key"));
+
         System.out.println();
+
+
 
 
         //beim HashMultiMap speichert man alle Elemente (Schlüssel: [] → Werte in HashSet)!
@@ -156,6 +180,10 @@ public class GuavaOverview {
         biMap.put("three", 3);
         biMap.put("four", 4);
         System.out.println(biMap);
+
+// Beim BiMap kann den Schlüssel durch den Wert suchen.
+        System.out.println("Key for value 2: " + biMap.inverse().get(2)); // Output: two
+
         System.out.println();
     }
 
