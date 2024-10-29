@@ -31,7 +31,7 @@ public class FixedSizeOverview {
         }catch (UnsupportedOperationException exception){
             System.out.println("An element can't be added to fixedList");
         }
-        //Hinzufügen die Dateien in FixedList
+        //Löschen die Dateien von FixedList
         try{
             list.remove("strawberry");
             System.out.println(list);
@@ -46,8 +46,6 @@ public class FixedSizeOverview {
         Map<String, Integer> map = FixedSizeMap.fixedSizeMap(new HashMap<>(Map.of("apple", 1, "banana", 2, "cherry", 3)));
 
         System.out.println("Original map: " + map);  // Output: {apple=1, banana=2, cherry=3}
-
-
 
         try {
             map.put("grape", 3);

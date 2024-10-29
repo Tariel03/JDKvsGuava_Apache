@@ -2,7 +2,7 @@ package org.example.overview.guava;
 
 import com.google.common.collect.Range;
 /*
-Range basiert auf Menge in Mathematik, Range kann öffenen, geschlossen und mixed sein. z.B. [1,10], (1,19];
+Fachausdruck basiert auf Menge in Mathematik, Range kann öffenen, geschlossen und mixed sein. z.B. [1,10], (1,19];
  */
 public class RangeOverview {
     public static void main(String[] args) {
@@ -17,18 +17,18 @@ public class RangeOverview {
 
     }
 
-    //Hier wird das öffene Range erzeugt, das enthält alle N Elemente from 1 bis zu 1000000
+    //Hier wird das öffenes Ausdruck erzeugt, das enthält alle N Elemente from 1 bis zu 1000000
     public static void closedRangeView(){
         Range<Integer> closedRange = Range.closed(1,1000000);
         System.out.println(closedRange.contains(1));
 
     }
-    //Hier wird das öffene Range erzeugt, das enthält alle N Elemente from 1 bis zu 1000000, aber das enthält die erste and letzte Elemente nicht!
+    //Hier wird der öffene Ausdruck erzeugt, das enthält alle N Elemente from 1 bis zu 1000000, aber das enthält die erste and letzte Elemente nicht!
     public static void openRangeView(){
         Range<Integer> openRange = Range.open(1,1000000);
         System.out.println(openRange.contains(1));
     }
-    //Diese Range bekommt man alle N Elemente from 1 bis zu 1000000, aber 1 fehlt.
+    //Dieser Ausdruck bekommt man alle N Elemente from 1 bis zu 1000000, aber 1 fehlt.
     public static void openClosedRangeView(){
         Range<Integer> openClosed = Range.openClosed(1,100000000);
         System.out.println();
@@ -36,7 +36,7 @@ public class RangeOverview {
         System.out.println(openClosed.contains(100000000));
 
     }
-    //Diese Range bekommt man alle N Elemente from 1 bis zu 1000000, aber 1000000 fehlt.
+    //Dieser Ausdruck bekommt man alle N Elemente from 1 bis zu 1000000, aber 1000000 fehlt.
     public static void closedOpenRangeView(){
         Range<Integer> openClosed = Range.closedOpen(1,100000000);
         System.out.println();
@@ -60,7 +60,10 @@ public class RangeOverview {
         System.out.println(from.contains(100000000));
 
     }
-    //Das ist ein Method, man benutzt zu bestimmen ob A and B == C, wo |C| >= 0
+    /*  Dies ist eine Methode, um die Vereinigungsmenge von zwei Bereichen zu bestimmen.
+        Dabei wird überprüft, ob sich der Bereich "from" und der Bereich "closedRange" überschneiden.
+        Falls eine Schnittmenge existiert, wird diese ausgegeben; andernfalls wird eine Ausnahme geworfen.
+     */
     public static void checkIntersection(){
         Range<Integer> from = Range.atLeast(10);
         Range<Integer> closedRange = Range.closed(1,101);

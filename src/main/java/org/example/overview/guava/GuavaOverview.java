@@ -47,8 +47,8 @@ public class GuavaOverview {
 
         /*
         Es gibt viele verschiedene Immutable Classes und Schnittstellen, wie ImmutableSortedSet oder
-        ImmutableTable, um unveränderbar Elementen zu erzeugen. Man kann benötigen ,wenn es Daten gibt
-        die nicht verändern
+        ImmutableTable, um unveränderbar Elementen zu erzeugen. Man kann benötigen, wenn es Daten gibt
+        die nicht verändern werden sollen.
          */
 
     }
@@ -134,15 +134,14 @@ public class GuavaOverview {
         System.out.println("There are " + multiset.count(1) + " times, 1 was found in the multiset!");
         //Auch gibt es LinkedHashMultiSet, TreeMultiSet!
     }
-
-    public static void tableOverview(){
-        /*
-        Hier wird die Schnittstelle Table hinzufügt
-        Table benutzt um 2d objekten zu speichern in Map (R, C, V);
-         */
+    public static void tableOverview() {
+    /*
+     Eine Tabelle (Table) wird genutzt, um Daten in einer zweidimensionalen Struktur zu speichern.
+     Jede Zelle der Tabelle wird durch eine Kombination von Zeile (Row) und Spalte (Column) eindeutig identifiziert und hat einen zugeordneten Wert (Value).
+     */
         Table<String, String, Integer> hashTable = HashBasedTable.create();
 
-        // Add entries (Row, Column, Value)
+        // Einträge hinzufügen (Zeile, Spalte, Wert)
         hashTable.put("Apple", "Price", 150);
         hashTable.put("Apple", "Stock", 50);
         hashTable.put("Banana", "Price", 100);
@@ -153,20 +152,21 @@ public class GuavaOverview {
         System.out.println("HashBasedTable: " + hashTable);
         System.out.println();
 
-        //sorted Table!
+        // Eine sortierte Tabelle erstellen
         Table<String, String, Integer> treeTable = TreeBasedTable.create();
 
+        // Einträge hinzufügen (Zeile, Spalte, Wert)
         treeTable.put("Orange", "Price", 120);
         treeTable.put("Apple", "Price", 150);
         treeTable.put("Apple", "Stock", 50);
         treeTable.put("Banana", "Price", 100);
         treeTable.put("Banana", "Stock", 30);
 
-
-        System.out.println("Banana Stock: " + treeTable.get("Banana", "Stock")); // Output: 30
+        System.out.println("Banana Stock: " + treeTable.get("Banana", "Stock")); // Ausgabe: 30
 
         System.out.println("TreeBasedTable: " + treeTable);
     }
+
 
     public static void biMapView(){
         /*
@@ -174,7 +174,7 @@ public class GuavaOverview {
          */
         BiMap<String, Integer> biMap = HashBiMap.create();
         biMap.put("one", 1);
-//       biMap.put("onee", 1);  hier kriegt man die Exception,
+//       biMap.put("onee", 1);  hier kriegt man den Fehler,
 //        weil der Wert und der Schlüssel müssen eindeutig sein
         biMap.put("two", 2);
         biMap.put("three", 3);
