@@ -6,14 +6,14 @@ Fachausdruck basiert auf Menge in Mathematik, Range kann öffenen, geschlossen u
  */
 public class RangeOverview {
     public static void main(String[] args) {
-        closedRangeView();
-        openRangeView();
+//        closedRangeView();
+//        openRangeView();
         openClosedRangeView();
-        closedOpenRangeView();
-        upToView();
-        fromView();
-        checkIntersection();
-        checkGap();
+//        closedOpenRangeView();
+//        upToView();
+//        fromView();
+//        checkIntersection();
+//        checkGap();
 
     }
 
@@ -30,11 +30,9 @@ public class RangeOverview {
     }
     //Dieser Ausdruck bekommt man alle N Elemente from 1 bis zu 1000000, aber 1 fehlt.
     public static void openClosedRangeView(){
-        Range<Integer> openClosed = Range.openClosed(1,100000000);
-        System.out.println();
-        System.out.println(openClosed.contains(1));
-        System.out.println(openClosed.contains(100000000));
-
+        Range<Integer> openClosed = Range.openClosed(1,50);
+        System.out.println(openClosed.contains(1));//Ausgabe: false
+        System.out.println(openClosed.contains(50));//Ausgabe: true
     }
     //Dieser Ausdruck bekommt man alle N Elemente from 1 bis zu 1000000, aber 1000000 fehlt.
     public static void closedOpenRangeView(){

@@ -13,23 +13,20 @@ Zeichenfolgen verwendet wird. Der Hauptvorteil eines Versuchs besteht darin, das
 public class TrieOverview {
     public static void main(String[] args) {
         basicOverview();
-        autoCompleteOverview();
-        orderedTrieOverview();
+//        autoCompleteOverview();
+//        orderedTrieOverview();
 
 
     }
     public static void basicOverview(){
         Trie<String, String> trie = new PatriciaTrie<>();
-
         trie.put("apple", "fruit");
         trie.put("applet", "small fruit");
         trie.put("banana", "fruit");
         trie.put("ball", "toy");
         trie.put("bat", "sports equipment");
-        //Man sucht die Elemente, die mit einem bestimmten Präfix beginnen.
-
-        System.out.println("Entries starting with 'app': " + trie.prefixMap("app"));
-        System.out.println("Entries starting with 'ba': " +trie.prefixMap("ba"));
+        System.out.println("Entries starting with 'app': " + trie.prefixMap("app")); //Ausgabe: {apple=fruit, applet=small fruit}
+        System.out.println("Entries starting with 'ba': " +trie.prefixMap("ba"));//Ausgabe:{ball=toy, banana=fruit, bat=sports equipment}
     }
     public static void autoCompleteOverview(){
 

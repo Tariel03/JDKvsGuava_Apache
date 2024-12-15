@@ -14,32 +14,15 @@ public class FixedSizeOverview {
         fixedMapOverview();
 
     }
-    public static void fixedListOverview(){
+    public static void fixedListOverview() {
         List<String> list = FixedSizeList.fixedSizeList(List.of("apple", "orange", "mango", "banana"));
-        System.out.println(list);
-
-        try{
-            list.set(1,"watermelon");
-            System.out.println(list);
-        }catch (UnsupportedOperationException exception){
-            System.out.println("The list can't be changed");
-        }
-        //Hinzufügen die Dateien in FixedList
-        try{
+        try {
             list.add("strawberry");
             System.out.println(list);
-        }catch (UnsupportedOperationException exception){
+        } catch (UnsupportedOperationException exception) {
             System.out.println("An element can't be added to fixedList");
-        }
-        //Löschen die Dateien von FixedList
-        try{
-            list.remove("strawberry");
-            System.out.println(list);
-        }catch (UnsupportedOperationException exception){
-            System.out.println("An element can't be deleted from fixedList");
-        }
-        System.out.println();
 
+        }
     }
     public static void fixedMapOverview(){
         // Create a fixed-size map from an existing map

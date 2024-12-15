@@ -11,8 +11,9 @@ public class ClassInstanceMapOverview {
     public static void main(String[] args) {
         // ClassToInstanceMap for numbers
         ClassToInstanceMap<Number> classToInstanceMap = MutableClassToInstanceMap.create();
-        classToInstanceMap.putInstance(Integer.class, 123);
-        classToInstanceMap.putInstance(Double.class, 45.67);
+        classToInstanceMap.putInstance(Integer.class, 123); //Ausgabe: Integer instance: 123
+        classToInstanceMap.putInstance(Double.class, 45.67);//Ausgabe: Double instance: 45.67
+
 
         System.out.println("Integer instance: " + classToInstanceMap.getInstance(Integer.class));
         System.out.println("Double instance: " + classToInstanceMap.getInstance(Double.class));
