@@ -10,8 +10,8 @@ public class GuavaOverview {
 //        immutableView();
 //        multiMapView();
 //        multiSetView();
-//        tableOverview();
-        biMapView();
+        tableOverview();
+//        biMapView();
 
 
     }
@@ -57,6 +57,10 @@ public class GuavaOverview {
         hashTable.put("Banana", "Stock", 30);
 
         System.out.println("Apple Price: " + hashTable.get("Apple", "Price")); //Ausgabe : Apple Price: 150
+
+        //Let's check if null values are supported!
+        hashTable.put("Apple", null, 10);
+//        System.out.println(hashTable.get(null,null));
     }
 
 

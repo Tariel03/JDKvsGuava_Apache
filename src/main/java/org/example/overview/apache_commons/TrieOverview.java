@@ -48,6 +48,7 @@ public class TrieOverview {
     }
     public static void orderedTrieOverview(){
         Trie<String, String> trie = new PatriciaTrie<>();
+        //Trie<Long, Long> longLongTrie = new PatriciaTrie<>(); not allowed as Key is not String!.
 
         // Adding key-value pairs
         trie.put("dog", "animal");
