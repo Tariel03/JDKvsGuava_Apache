@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
 public class WeatherApiCacheTest {
     private static final int CACHE_SIZE = 100;
     private final Map<String, CachedResponse> cache;
-    private static final String API_KEY = "ab8e63ed2155fc9b6a210ba816fd6291"; // Replace with a valid API key
+    private static final String API_KEY = "XXXXXXXXXX"; // Replace with a valid API key
     private static final double TEST_LAT = 52.52;  // Berlin
     private static final double TEST_LON = 13.41;
 
